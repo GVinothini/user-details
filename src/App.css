@@ -1,0 +1,38 @@
+.App {
+  text-align: left;
+}
+
+
+
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+div{
+  display: flex;
+  flex-flow: column;
+    align-items: left;
+    justify-content: left;
+    font-size: 20px;
+    height: 100%;
+}
+.udetails{
+  font-size: 24px;
+}
+table {
+  tab-size: 4;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
