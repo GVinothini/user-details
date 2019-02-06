@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 import GetUsers from './Components/GetUsers';
 import GetUserDetails from './Components/GetUserDetails';
+import GetSpecificDetails from './Components/GetSpecificDetails';
 class App extends Component {
 
     render(){
@@ -13,9 +14,9 @@ class App extends Component {
                     <Redirect exact from="/" to="/userList"/>
                     <Route path="/userList" component={GetUsers} />
                     <Route path="/userDetails" component={GetUserDetails} />
-                    {/* <Route path="/posts" component={SpecificDetails} />
-                    {/* <Route path="/todos" component={SpecificDetails} />
-                    <Route path="/albums" component={SpecificDetails}   /> */} 
+                    <Route path="/posts" component={GetSpecificDetails} />
+                    <Route path="/todos" component={GetSpecificDetails} />
+                    <Route path="/albums" component={GetSpecificDetails}   /> 
                   </div>                  
                 </Router>
             </div>               

@@ -26,3 +26,16 @@ export const fetchuserlist = () => {
       type: "FETCH_DETAILS_SUCCESS",
       userdetails : data
   })
+
+  export const fetchSpecificDetails = ()=>  {
+    return {
+        type:  'FETCH_USER_SPEC'
+    }
+}
+
+export const specDetailsSuccess = data => ( {
+  type: "FETCH_SPEC_SUCCESS",
+  specdetails : data
+})
+
+  

@@ -1,21 +1,22 @@
 export default (state = [], action) => {
     switch (action.type) {
-        case "FETCH_USER_DETAILS":
-        console.log('in details reducer')
+        case "FETCH_USER_SPEC":
+        console.log('in specifc reducer')
+
             return {
                 ...state,
                 loading: true,
-                userdetails: [],
+                specdetails: []
             }
         case "FETCH_FAILD": 
             return {
                 ...state,
                 loading: false,
-                userdetails: []
+                specdetails: []
             }
-        case "FETCH_DETAILS_SUCCESS":
+        case "FETCH_SPEC_SUCCESS":
             return { state,
-                userdetails: action.userdetails
+                specdetails: action.specdetails
             }
         default:
             return state;

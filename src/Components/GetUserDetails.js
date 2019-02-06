@@ -5,7 +5,7 @@ import UserDetails from './UserDetails'
 
 import { fetchUserDetails } from '../Actions/Actions'
 
-const mapStateToProps = state => ({ userDetails: state.userDetails });
+const mapStateToProps = state => ({ userdetails: state.detailreducer.userdetails });
 
 const mapDispatchToProps = dispatch => bindActionCreators({fetchUserDetails}, dispatch);
 

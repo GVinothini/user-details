@@ -7,13 +7,14 @@ class UserList extends Component {
         console.log('did mount');
         this.props.fetchuserlist();
         console.log('mounted')
+        console.log(this.props.id)
     }
 
     render() {
         return (
             <div>
                 <ul>
-                {this.props.userlist && this.props.userlist.map(post => {
+                {this.props.userlist && this.props.userlist.map(post  => {
                     const {id , name} = post
                         return ( <li>
                             <Link to={{pathname : "/userDetails", search : "?id=" + id}}> {name}

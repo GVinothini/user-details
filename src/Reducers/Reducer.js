@@ -1,7 +1,8 @@
 export default (state = [], action) => {
     switch (action.type) {
         case "FETCH_USER_LIST":
-        console.log(action.id)
+        console.log('in list reducer')
+
             return {
                 ...state,
                 loading: true,
@@ -14,9 +15,9 @@ export default (state = [], action) => {
                 userlist: []
             }
         case "FETCH_SUCCESS":
-            return Object.assign({}, state, {
+            return { state,
                 userlist: action.userlist
-            })
+            }
         default:
             return state;
     }
