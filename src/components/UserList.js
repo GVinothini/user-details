@@ -1,51 +1,29 @@
-import React, { Component } from 'react';
-import '../App.css';
-import {BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import UserDetails from './UserDetails';
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom'
 
 class UserList extends Component {
 
-      state = {
-        users: []
-      };
-      
-      getUser()   {        
-        fetch(`https://jsonplaceholder.typicode.com/users`)
-          .then(response => response.json())
-              .then(details =>
-                  this.setState(  {
-                      users : details
-                    } )
-                )
-      }
-
-      componentWillMount()  {
-          this.getUser();
-      }
-      
-      render() {
-      const {users } = this.state;
-        return (         
-          <div className="App">
-          <h1>User List</h1>
-          <ul>
-            {
-              users.map( user =>  {  
-                 const { id, name, email } = user;
-                 console.log(id); 
-                 return   (  
-                       <li>
-                          <Link to={{ pathname: "/userDetails", search: "?id="+id }}>
-                          {name}
-                          </Link>                            
-                          </li>
-                 ) 
-                } )        
-              }    
-            </ul>      
-           </div>
-        );
-      }
+    componentDidMount() {
+        console.log('mount')
+        this.props.fetchuserlist();
     }
 
+    render() {
+        return (
+            <div>
+                <h1>USERS LIST</h1>
+                <ol>
+                    {this.props.userlist && this.props.userlist.map(user  => {
+                        const {id , name} = user
+                            return ( <li key={id}>
+                                <Link to={{pathname : "/userDetails", search : "?id=" + id}}> {name}
+                                </Link> </li>
+                             );
+                        })}
+                </ol>
+            </div>
+        )
+     }
+}
+    
 export default UserList;
