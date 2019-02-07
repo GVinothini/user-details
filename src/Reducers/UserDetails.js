@@ -14,7 +14,8 @@ export default (state = [], action) => {
                 userdetails: []
             }
         case "FETCH_DETAILS_SUCCESS":
-            return { state,
+            return { 
+                state,
                 userdetails: action.userdetails
             }
         default:
